@@ -526,25 +526,80 @@ text-align: center;
 
 /* --------------------------------------------------------- */ 
 
+/* --------------------------------------------------------- */
+/* NEW CSS for Conclusion Section (Fixed 3-Column Design) */
+/* --------------------------------------------------------- */
+
+/* Grid container: Enforces FIXED 3 columns on desktop */
+.conclusion-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin: 30px auto 60px auto; 
+    padding: 0 20px;
+}
+
+/* Individual Card Style: Distinct from .intro-card */
+.conclusion-point-card {
+    /* Use a slightly different background/border for distinction */
+    background: rgba(20, 25, 30, 0.7); /* Slightly darker/bluer tint */
+    padding: 20px 28px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--muted); /* Unique top accent border */
+    color: var(--paper);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conclusion-point-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.conclusion-point-card h3 {
+    color: var(--subtle); /* A different accent color for headings */
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.conclusion-point-card p {
+    color: var(--color-secondary-text);
+    font-size: 0.95rem;
+}
+
 .conclusion-box {
-  background: var(--glass); /* SAME glass effect */
-  border-radius: 12px;
-  padding: 28px;
-  border: 1px solid rgba(255,255,255,0.03); /* SAME subtle border */
-  color: var(--paper);
-  margin-top: 30px;
-  
-  margin-bottom: 60px;
+  background: var(--glass); /* SAME glass effect: rgba(255,255,255,0.04) */
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.03); /* SAME subtle border */
+  color: var(--paper);
+  margin-top: 30px;
+  margin-bottom: 60px; /* Provides space before the footer/next section */
 }
 
-/* text styling inside */
+/* Styling for the sub-headings inside the conclusion box */
+.conclusion-box h3 {
+    color: var(--focus); /* Using the brighter focus color for main points */
+    font-size: 1.25rem;
+    margin: 10px 0 8px 0;
+    font-weight: 700;
+}
+
+/* Text styling inside the paragraphs */
 .conclusion-box p {
-  color: var(--muted);
-  line-height: 1.6;
-  margin-top: 10px;
-  font-size: .6rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 5px;
+  font-size: 1rem;
 }
 
+/* Mobile Responsiveness for Conclusion Cards */
+@media (max-width: 640px) {
+    .conclusion-card-grid {
+        grid-template-columns: 1fr; /* Stacks to 1 column on mobile */
+    }
+}
 /* --------------------------------------------------------- */ 
 
 /* Footer styled like the navigation bar */
@@ -567,6 +622,21 @@ text-align: center;
 
 .footer-container a:hover {
   text-decoration: underline;
+}
+
+/* --------------------------------------------------------- */ 
+
+
+
+/* Ensuring the main section heading remains styled correctly */
+.section-heading {
+    color: var(--accent);
+    font-size: 2.2rem;
+    margin: 60px 0 30px 0;
+    font-weight: 700;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 
@@ -866,21 +936,28 @@ Miguel Enriquez<br>
 
 
 <!-- CONCLUSION ---------------------------------------------------------->
-<!-- CONCLUSION ---------------------------------------------------------->
 <section id="section-conclusion">
-<h2 class="section-heading"; >Conclusion</h2>
-  <div class="conclusion-box">
-    
+<h2 class="section-heading">Conclusion</h2>
 
-    <p>
-In conclusion, despite AI generated content offering a new way to speed up possibly tedious tasks and become cost-efficient across multiple industries, from education all the way to even customer service. It does however, pose multiple significant ethical, social, and/or legal challenges. The ability of AI to produce convincing yet false or biased information, generate deepfakes so believable that anyone unaware might think it's true, enable academic dishonesty within students of almost all levels, and the possibility of compromising a user’s data and their privacy are all reasons why institutions and users alike are advised to remain vigilant. Without rules or regulations, AI may be used to change the whole story, warp the truth, and erode public trust within one another.
-<br>
-<br>
-AI in and of itself, should be viewed as a tool, not as a substitute for human judgement. Maintaining a set of guidelines like cross checking information, disclosing the use of AI and complying with regulations are all simple ways in which users may responsibly use AI. Furthermore, a good rule of thumb when using AI, is to make sure that you have a balance between AI and human input, these are key to avoiding issues that may otherwise damage its user in any way.  With it further evolving with each prompt we use, spreading awareness about its use and capabilities will be crucial in ensuring that AI and technology as a whole will serve both the public and its users well.
+<div class="conclusion-card-grid"> 
 
-  </div>
+    <div class="conclusion-point-card">
+        <h3>AI Offers Benefits—but Also Risks</h3>
+        <p>AI-generated content can streamline tedious work and reduce costs across many industries, from education to customer support. However, it also brings serious ethical, social, and legal concerns like misinformation, deepfakes, academic dishonesty, and privacy compromise. Without proper safeguards, AI can distort narratives and weaken public trust.</p>
+    </div>
+
+    <div class="conclusion-point-card">
+        <h3>Human Judgment Still Matters</h3>
+        <p>AI should be used as a tool—not as a replacement for human decision-making. Following simple practices like verifying information, disclosing AI use, and complying with existing guidelines helps ensure responsible usage in all fields.</p>
+    </div>
+
+    <div class="conclusion-point-card">
+        <h3>Balance Is Key</h3>
+        <p>A thoughtful balance between AI outputs and human input is essential to preventing misinformation, harm, or misuse. Increasing public awareness of AI's capabilities and limitations will be crucial as the technology continues to evolve, ensuring it serves communities and users responsibly.</p>
+    </div>
+
+</div>
 </section>
-
 
 <!-- REFERENCES ---------------------------------------------------------->
 
