@@ -155,7 +155,6 @@ nav.main-nav a:hover {
   }
 }
 
-  
 
 /* -------------------- HERO SECTION -------------------- */
 
@@ -188,6 +187,17 @@ header.hero-section p {
   font-size: 0.7rem;
 }
 
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+  header.hero-section {
+    margin-top: 60px; /* Reduced top margin for mobile */
+    padding: 20px; /* Reduced padding */
+  }
+
+  header.hero-section h1 {
+    font-size: clamp(1.2rem, 5vw, 2rem); /* Smaller font size on mobile */
+  }
+}
 /* -------------------- CONTENT GUIDE -------------------- */
 
 .content {
@@ -1069,8 +1079,4 @@ Miguel Enriquez<br>
   </div>
 
 </footer>
-
-
-
-
 
