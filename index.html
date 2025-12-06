@@ -292,20 +292,52 @@ text-align: center;
   font-weight: 500;
 }
 
-@media (max-width: 640px) {
-  .intro-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Add an active effect for touch devices */
+/* Mobile Responsiveness Adjustments */
 @media (max-width: 768px) {
-  .intro-card:active {
-    transform: translateY(-5px); /* Mimic hover */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Mimic hover */
+  /* Introduction Box */
+  .introduction-box {
+    padding: 20px; /* Slightly smaller padding on mobile */
+  }
+
+  /* Section Heading */
+  .section-heading {
+    font-size: 1.1rem; /* Slightly smaller on mobile */
+    margin: 40px 0 20px 0; /* Adjusted margin for smaller screens */
+  }
+
+  /* Intro Card Grid */
+  .intro-cards {
+    grid-template-columns: 2fr; 
+  }
+
+  /* Individual Cards */
+  .intro-card {
+    padding: 18px 24px; /* Adjust padding */
+  }
+
+  /* Card Title */
+  .intro-card h3 {
+    font-size: 0.8rem; /* Smaller title size on mobile */
   }
 }
 
+@media (max-width: 480px) {
+  /* Section Heading */
+  .section-heading {
+    font-size: 1.1rem; /* Slightly smaller font for very small screens */
+    margin: 30px 0 15px 0; /* Adjust margin more for small screens */
+  }
+
+  /* Card Title */
+  .intro-card h3 {
+    font-size: 0.8rem; /* Even smaller font size for mobile */
+  }
+  
+    /* Intro Card Grid */
+  .intro-cards {
+    grid-template-columns: 2fr; 
+  }
+}
 
 /* - ethical risks -------------------------------------------------------- */
 
