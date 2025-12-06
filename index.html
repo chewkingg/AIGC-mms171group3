@@ -7,7 +7,7 @@
 
 <style>
 :root {
-  --bg-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg');
+  --bg-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&h=1400');
   --accent: #D6FF3F;
   --focus: #E9FFA0;
   --muted: #B0B0B0;
@@ -60,6 +60,14 @@ font-size: 12px;
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* fix mobile disappearing issue */
+  }
+}
 
   padding: 0 20px; /* horizontal padding only */
   position: relative;
