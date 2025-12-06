@@ -404,18 +404,25 @@ text-align: center;
 }
 
 .card-bubble h3 {
-  margin-top: 0;
-  font-size: 1.0rem;
+  margin: 0;
+  font-size: 1rem;               /* Adjust size as necessary */
   font-weight: 500;
   color: var(--focus);
-  margin-bottom: 10px;
+  height: 70px;                  /* Fixed height */
+  display: flex;                 /* Enable flexbox */
+   justify-content: center;       /* Vertically center content */
+  align-items: center;           /* Horizontally center content */
+
+
 }
+
 
 .card-bubble p {
   flex-grow: 1;        /* pushes content to fill bubble evenly */
   font-size: 0.7rem;
   line-height: 1.5;
   color: var(--paper);
+  
 }
 
 
@@ -457,7 +464,7 @@ text-align: center;
   padding: 20px;
   margin: 0;
   border-radius: 10px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: left;
   transition: all 0.25s ease; /* Smooth default state */
 }
@@ -647,9 +654,6 @@ text-align: center;
   display: flex;
   align-items: left;
   margin-bottom: 20px;
-
-    
-}
   
 }
 
@@ -865,7 +869,7 @@ Miguel Enriquez<br>
         <img src="https://images.pexels.com/photos/18465017/pexels-photo-18465017.jpeg?_gl=1*1x3lzf7*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ1OTQkajQ2JGwwJGgw" alt="Deepfakes">
       </div>
       <div class="card-bubble">
-        <h3>Social Manipulation (Deepfakes)</h3>
+        <h3>Social Manipulation</h3>
         <p>AI can create hyper-realistic fabricated media (videos, voices, images) to impersonate people or create fake statements, damaging reputations and undermining trust. <strong>82%</strong> of respondents believed an AI-generated visual was real at least once.</p>
       </div>
     </div>
