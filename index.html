@@ -335,7 +335,7 @@ text-align: center;
   
     /* Intro Card Grid */
   .intro-cards {
-    grid-template-columns: 2fr; 
+    grid-template-columns: repeat(2, 1fr); /* 2 cards fixed */
   }
 }
 
@@ -405,7 +405,7 @@ text-align: center;
 
 @media (max-width: 640px) {
   .ethical-risk-grid {
-    grid-template-columns: 1fr; /* 1 card per row on small devices */
+    grid-template-columns: repeat(2, 1fr); /* 2 cards fixed */
   }
   
 /* Mimic hover effect on tap (active state) */
@@ -638,7 +638,7 @@ background: rgba(255, 255, 255, 0.1); /* semi-transparent */
 /* Mobile Responsiveness for Conclusion Cards */
 @media (max-width: 640px) {
     .conclusion-card-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on mobile */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1105,7 +1105,7 @@ Miguel Enriquez<br>
       is licensed under
       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--accent); font-weight: 600;">
         CC BY-NC-SA 4.0
-      </a>.
+      </a>
     </div>
 
   </div>
