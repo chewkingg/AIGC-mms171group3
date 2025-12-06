@@ -268,18 +268,20 @@ text-align: center;
   }
 }
 
-/* - Ethical Risks -------------------------------------------------------- */
+/* - ethical risks -------------------------------------------------------- */
 
 .ethical-risk-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cards fixed */
   gap: 20px;
   margin-top: 30px;
+  align-items: stretch; /* ensures all cards are same height */
 }
 
 .ethical-risk-card {
   display: flex;
   flex-direction: column;
+  height: 100%; /* allows card-bubble to stretch */
 }
 
 .card-image img {
@@ -292,28 +294,31 @@ text-align: center;
 }
 
 .card-bubble {
-  background: rgba(20, 30, 25, 0.8); /* subtle dark bubble */
+  background: rgba(20, 30, 25, 0.8);
   margin: -30px 10px 0 10px;
   padding: 20px;
   border-radius: 25px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 1;        /* fills remaining card height */
+  justify-content: flex-start;
+  transition: all 0.3s ease;
 }
 
 .card-bubble h3 {
   margin-top: 0;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--focus);
   margin-bottom: 10px;
 }
 
 .card-bubble p {
-  flex-grow: 1;
+  flex-grow: 1;        /* pushes content to fill bubble evenly */
   font-size: 0.7rem;
   line-height: 1.5;
   color: var(--paper);
@@ -323,37 +328,24 @@ text-align: center;
 .ethical-risk-card:hover .card-bubble {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.45);
-  transition: all 0.3s ease;
 }
 
-@media (max-width: 1200px) {
-  .ethical-risk-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ethical-risk-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* -------------------- Example & Tip Section -------------------- */
 
 .example-tip-item {
-  background-color: transparent; /* transparent wrapper */
+  background-color: transparent; /* wrapper */
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .example-tip-item h4 {
   margin-top: 0;
   color: var(--color-accent-subtle);
-  font-size: .8rem;
+  font-size: 1rem;
   padding-bottom: 5px;
-  border-bottom: 1px dashed var(--color-responsibility-bg);
+  border-bottom: 1px solid var(--color-responsibility-bg);
   margin-bottom: 15px;
 }
 
@@ -361,10 +353,8 @@ text-align: center;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  align-items: stretch; /* ensures equal height for both boxes */
-  background: transparent;
+  align-items: stretch; /* equal height boxes */
   padding: 0;
-  
 }
 
 .example-tip-wrapper .example-box,
@@ -373,13 +363,14 @@ text-align: center;
   min-width: 250px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* stack contents vertically */
-  justify-content: flex-start; /* top-align text */
-  padding: 20px; /* same padding for both boxes */
-  margin: 0; /* remove extra margin inside boxes */
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  margin: 0;
   border-radius: 4px;
   font-size: 0.7rem;
   text-align: left;
+  transition: all 0.25s ease; /* smooth default state */
 }
 
 /* Example Box */
@@ -397,30 +388,35 @@ text-align: center;
 }
 
 /* Strong labels inside boxes */
-.example-box strong {
-  display: block;
-  margin-bottom: 10px;
-  font-size: .7rem;
-  font-weight: 700;
-  color: var(--color-secondary-text); /* #ccc for Example: */
-}
-
+.example-box strong,
 .tip-box strong {
   display: block;
   margin-bottom: 10px;
-  font-size: .7rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: var(--color-accent); /* accent color for Tip: */
 }
 
+.example-box strong { color: var(--color-secondary-text); }
+.tip-box strong { color: var(--color-accent); }
 
-.tip-box ul,
-.example-box ul {
+/* Lists inside boxes */
+.example-box ul,
+.tip-box ul {
   padding-left: 20px;
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: left;
 }
+
+/* Hover effects */
+.example-box:hover,
+.tip-box:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+
+.example-box:hover { border-left-color: var(--color-primary-text) !important; }
+.tip-box:hover { border-left-color: var(--color-accent) !important; }
 
 /* Responsive stacking on mobile */
 @media (max-width: 768px) {
@@ -433,38 +429,6 @@ text-align: center;
   }
 }
 
-.example-box:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
-    transition: all 0.25s ease;
-  border-left-color: var(--color-primary-text) !important; /* FORCE FIX */
-}
-
-.tip-box:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
-    transition: all 0.25s ease;
-  border-left-color: var(--color-accent) !important; /* Keep original! */
-}
-
-/* Smooth default state */
-.example-box,
-.tip-box {
-  transition: all 0.25s ease;
-}
-
-
-
-/* -------------------- Responsive -------------------- */
-@media (max-width: 768px) {
-  .example-tip-wrapper {
-    flex-direction: column; /* stack vertically on mobile */
-  }
-  .example-tip-wrapper .example-box,
-  .example-tip-wrapper .tip-box {
-    flex: 1 1 100%;
-  }
-}
 
 /* ----------------------------------------------------- */
 /* CSS for User Responsibilities in Using AIGC Grid
@@ -975,17 +939,65 @@ Miguel Enriquez<br>
 </nav>
 
 <!-- FOOTER -------------------------------------------------------------->
-<footer class="footer-container">
-<footer>
-  <a href="https://chewkingg.github.io/AIGC-mms171group3/">Responsible use of AI-generated Content</a> © 2025 by 
-  <a href="https://example.com">MMS 171 Group 3</a> is licensed under 
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+<!-- FOOTER -------------------------------------------------------------->
+<footer style="
+  width: 100vw; 
+  margin-top: 10rem;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;           
+  margin-right: -50vw;
 
-  <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="max-width: 1em; max-height: 1em; margin-left: .2em;">
-  <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="max-width: 1em; max-height: 1em; margin-left: .2em;">
-  <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="max-width: 1em; max-height: 1em; margin-left: .2em;">
-  <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="max-width: 1em; max-height: 1em; margin-left: .2em;">
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.2);
+
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-color);
+">
+
+  <!-- Inner centered container -->
+  <div style="
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+  ">
+
+    <!-- CC Icons -->
+    <div style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .35em;
+      margin-bottom: 10px;
+    ">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="width: 1.2em; height: 1.2em;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="width: 1.2em; height: 1.2em;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="width: 1.2em; height: 1.2em;">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="width: 1.2em; height: 1.2em;">
+    </div>
+
+    <!-- Text -->
+    <div style="line-height: 1.6;">
+      <a href="https://chewkingg.github.io/AIGC-mms171group3/" style="color: var(--accent); font-weight: 600;">
+        Responsible use of AI-generated Content
+      </a>
+      © 2025 by 
+      <a href="https://example.com" style="color: var(--accent); font-weight: 600;">
+        MMS 171 Group 3
+      </a>
+      is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--accent); font-weight: 600;">
+        CC BY-NC-SA 4.0
+      </a>.
+    </div>
+
+  </div>
+
 </footer>
 
-</body>
-</html>
