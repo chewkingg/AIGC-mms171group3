@@ -82,6 +82,13 @@ margin: 0 auto;
 padding-top: 36px; /* spacing from navbar */
 }
 
+/* Responsive for tablet and smaller screens */
+@media var(--max-width) {
+  body {
+    background-attachment: scroll; /* Fix for tablets */
+  }
+}
+
 
 /* Links */
 a {
@@ -257,7 +264,6 @@ text-align: center;
 }
 
 
-
 .intro-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -275,6 +281,15 @@ text-align: center;
     grid-template-columns: 1fr;
   }
 }
+
+/* Add an active effect for touch devices */
+@media (max-width: 768px) {
+  .intro-card:active {
+    transform: translateY(-5px); /* Mimic hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Mimic hover */
+  }
+}
+
 
 /* - ethical risks -------------------------------------------------------- */
 
@@ -338,6 +353,18 @@ text-align: center;
 .ethical-risk-card:hover .card-bubble {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 640px) {
+  .ethical-risk-grid {
+    grid-template-columns: 1fr; /* 1 card per row on small devices */
+  }
+  
+/* Mimic hover effect on tap (active state) */
+  .ethical-risk-card:active .card-bubble {
+    transform: translateY(-5px); /* Similar effect on tap */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45); /* Similar shadow on tap */
+  }
 }
 
 
@@ -1036,4 +1063,6 @@ Miguel Enriquez<br>
   </div>
 
 </footer>
+
+
 
