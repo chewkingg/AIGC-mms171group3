@@ -85,7 +85,7 @@ padding-top: 36px; /* spacing from navbar */
 /* Responsive for tablet and smaller screens */
 @media var(--max-width) {
   body {
-    background-attachment: scroll; /* Fix for tablets */
+    background-attachment: scroll; 
   }
 }
 
@@ -108,12 +108,12 @@ nav.main-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;  /* Changed from 100vw */
+  width: 100%;  
   padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;  /* Reduced gap for mobile */
+  gap: 20px;  
   
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -127,9 +127,9 @@ nav.main-nav {
 nav.main-nav a {
   display: inline-flex;
   align-items: center;
-  padding: 1px 15px; /* Reduced padding */
+  padding: 1px 15px; 
   font-weight: 600;
-  font-size: 0.8rem;  /* Could adjust to 0.7rem on smaller screens */
+  font-size: 0.8rem;  
   color: var(--paper);
   border-radius: 999px;
   border: 1.5px solid transparent;
@@ -140,18 +140,18 @@ nav.main-nav a {
 nav.main-nav a:hover {
   transform: translateY(-4px) scale(1.02);
   background: rgba(214,255,63,0.15);
-  color: var(--accent); /* Optional accent color on hover */
+  color: var(--accent); 
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   nav.main-nav {
-    gap: 15px;  /* Further reduce gap on smaller screens */
+    gap: 15px;  
   }
 
   nav.main-nav a {
-    font-size: 0.7rem;  /* Smaller font size for mobile */
-    padding: 8px 18px;  /* Smaller padding */
+    font-size: 0.7rem;  
+    padding: 8px 18px; 
   }
 }
 
@@ -202,10 +202,10 @@ header.hero-section p {
 
 .content {
   max-width: var(--max-width);
-  margin: 28px auto 0 auto; /* auto centers horizontally */
+  margin: 28px auto 0 auto; 
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px; /* optional spacing between items */
+  gap: 20px;
 }
 
 /* content guide / table of contents */
@@ -286,7 +286,7 @@ text-align: center;
 }
 
 .intro-card h3 {
-  color: var(--focus); /* changed from --accent to --focus */
+  color: var(--focus); 
   margin-bottom: 10px;
   font-size: 1.0rem;
   font-weight: 500;
@@ -296,46 +296,46 @@ text-align: center;
 @media (max-width: 768px) {
   /* Introduction Box */
   .introduction-box {
-    padding: 20px; /* Slightly smaller padding on mobile */
+    padding: 20px; 
   }
 
   /* Section Heading */
   .section-heading {
-    font-size: 1.1rem; /* Slightly smaller on mobile */
-    margin: 40px 0 20px 0; /* Adjusted margin for smaller screens */
+    font-size: 1.1rem; 
+    margin: 40px 0 20px 0;
   }
 
   /* Intro Card Grid */
   .intro-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards fixed */
+    grid-template-columns: repeat(2, 1fr); 
   }
 
   /* Individual Cards */
   .intro-card {
-    padding: 18px 24px; /* Adjust padding */
+    padding: 18px 24px; 
   }
 
   /* Card Title */
   .intro-card h3 {
-    font-size: 0.8rem; /* Smaller title size on mobile */
+    font-size: 0.8rem; 
   }
 }
 
 @media (max-width: 480px) {
   /* Section Heading */
   .section-heading {
-    font-size: 1.1rem; /* Slightly smaller font for very small screens */
-    margin: 30px 0 15px 0; /* Adjust margin more for small screens */
+    font-size: 1.1rem; 
+    margin: 30px 0 15px 0; 
   }
 
   /* Card Title */
   .intro-card h3 {
-    font-size: 0.8rem; /* Even smaller font size for mobile */
+    font-size: 0.8rem; 
   }
   
     /* Intro Card Grid */
   .intro-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards fixed */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
@@ -343,16 +343,16 @@ text-align: center;
 
 .ethical-risk-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards fixed */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 30px;
-  align-items: stretch; /* ensures all cards are same height */
+  align-items: stretch; 
 }
 
 .ethical-risk-card {
   display: flex;
   flex-direction: column;
-  height: 100%; /* allows card-bubble to stretch */
+  height: 100%;
 }
 
 /* Hover effect */
@@ -363,13 +363,13 @@ text-align: center;
 
 @media (max-width: 780px) {
   .ethical-risk-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards fixed */
+    grid-template-columns: repeat(2, 1fr); 
   }
 
 /* Mimic hover effect on tap (active state) */
   .ethical-risk-card:active .card-bubble {
-    transform: translateY(-5px); /* Similar effect on tap */
-    box-shadow: 0 12px 28px rgba(0,0,0,0.45); /* Similar shadow on tap */
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45); 
   }
 }
 
@@ -398,27 +398,27 @@ text-align: center;
   
   display: flex;
   flex-direction: column;
-  flex-grow: 1;        /* fills remaining card height */
+  flex-grow: 1;        
   justify-content: flex-start;
   transition: all 0.3s ease;
 }
 
 .card-bubble h3 {
   margin: 0;
-  font-size: 1rem;               /* Adjust size as necessary */
+  font-size: 1rem;               
   font-weight: 500;
   color: var(--focus);
-  height: 70px;                  /* Fixed height */
-  display: flex;                 /* Enable flexbox */
-   justify-content: center;       /* Vertically center content */
-  align-items: center;           /* Horizontally center content */
+  height: 70px;                  
+  display: flex;                 
+   justify-content: center;       
+  align-items: center;           
 
 
 }
 
 
 .card-bubble p {
-  flex-grow: 1;        /* pushes content to fill bubble evenly */
+  flex-grow: 1;        
   font-size: 0.7rem;
   line-height: 1.5;
   color: var(--paper);
@@ -455,8 +455,8 @@ text-align: center;
 
 .example-tip-wrapper .example-box,
 .example-tip-wrapper .tip-box {
-  flex: 1 1 48%;  /* 48% width, allowing two items per row */
-  min-width: 250px; /* Minimum width to avoid shrinking too much */
+  flex: 1 1 48%;  
+  min-width: 250px; 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -525,17 +525,15 @@ text-align: center;
 
 /* Responsive stacking on mobile - Removed flex-direction: column */
 @media (max-width: 768px) {
-  .example-tip-wrapper {
-    /* Flex remains in row direction with wrap */
+  .example-tip-wrapper {   
     flex-wrap: wrap;
-    gap: 15px; /* Reduced gap on smaller screens */
+    gap: 15px; 
   }
   
   .example-tip-wrapper .example-box,
   .example-tip-wrapper .tip-box {
-    /* Allow each box to take up 48% width for 2 columns, but they will wrap on smaller screens */
     flex: 1 1 48%;
-    min-width: 250px; /* Keep a minimum width to prevent shrinkage */
+    min-width: 250px;
   }
 }
 
@@ -543,13 +541,13 @@ text-align: center;
 @media (max-width: 480px) {
   .example-tip-wrapper .example-box,
   .example-tip-wrapper .tip-box {
-    padding: 16px; /* Reduced padding for very small screens */
-    font-size: 0.8rem; /* Adjusted font size */
+    padding: 16px; 
+    font-size: 0.8rem; 
   }
 
   /* Adjust the heading size for mobile */
   .example-tip-item h4 {
-    font-size: 0.9rem; /* Smaller heading on smaller screens */
+    font-size: 0.9rem; 
   }
 }
 
@@ -613,7 +611,6 @@ text-align: center;
 /* NEW CSS for Conclusion Section (Fixed 3-Column Design) */
 /* --------------------------------------------------------- */
 
-/* Grid container: Enforces FIXED 3 columns on desktop */
 .conclusion-card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -643,7 +640,7 @@ text-align: center;
 }
 
 .conclusion-point-card h3 {
-    color: var(--subtle); /* A different accent color for headings */
+    color: var(--subtle); 
     margin-bottom: 10px;
     line-height: 1.3;
     font-size: 1.0rem;
@@ -1004,16 +1001,22 @@ Miguel Enriquez<br>
 
 <!-- video ------------------------>
 
-<div class="page">
+<div class="page" style="max-width: 500px; margin: 0 auto;">
 
-  <iframe 
-    width="100%" 
-    height="480"
-    src="https://www.youtube.com/watch?v=-n1eQXLZnXc⁩"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+  <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden;">
+    <iframe 
+      src="https://www.youtube.com/embed/-n1eQXLZnXc" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    </iframe>
+  </div>
+
+<p style="margin-top: 10px; text-align: center;">A video by Accenture discussing the risks and responsible use of generative AI.</p>
+
 </div>
+
 
 <!-- video ------------------------>
 
