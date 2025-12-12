@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Responsible use of AI-generated Content</title>
 
+<!-- 
+*This final project can also be viewed on GitHub.*
+Repository Link: 
+  
+Responsible use of AI-generated Content by MMS 171 Group 3.
+Group3_Basal-Bocobo-Borja-Deniega-Enriquez_Final Project
+  
+AI Declaration:
+Google Gemini was used solely for identifying errors and clarification of code-related questions.
+All final code, layout, styling, and overall design were created by the group.
+  
+Course Acknowledgment:
+Concepts and techniques applied in this project were learned from MMS 142 and MMS 171.
+-->
+
 <style>
 :root {
   --bg-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?_gl=1*1z7066*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5ODM3ODIkbzMkZzEkdDE3NjQ5ODM5MjQkajU2JGwwJGgw');
@@ -12,29 +27,21 @@
   --focus: #E9FFA0;
   --muted: #B0B0B0;
   --paper: #ffffff;
+--subtle: #fadfda;
+  --color-secondary-text: #ccc;
   --max-width: 850px;
   --transition: 220ms cubic-bezier(.2,.9,.3,1);
   --glass: rgba(255,255,255,0.04);
   --color-example-bg: rgba(20, 30, 25, 0.8); /* subtle dark bubble */
-
---color-tip-bg: rgba(20, 40, 25, 0.7);
-
-  
+  --color-tip-bg: rgba(20, 40, 25, 0.7);
   --color-card-bg: rgba(0,0,0,0.35);
-  --subtle: #fadfda;
-  --color-primary-text: #ffffff;
-  --color-secondary-text: #ccc;
+
   --color-responsibility-bg: rgba(255,255,255,0.1);
-  
-  --color-accent: #D6FF3F;
-  --color-accent-subtle: #E9FFA0;
-  --color-primary-text: #ffffff;
-  --color-secondary-text: #ccc;
-  --color-responsibility-bg: rgba(255,255,255,0.3);
+ --color-responsibility-bg: rgba(255,255,255,0.3); 
 }
 
 
-/* -------------------- RESET -------------------- */
+/* ---------------------------------------- */
 * {
 box-sizing: border-box;
 margin: 0;
@@ -51,7 +58,7 @@ line-height: 1.55;
 color: #f7f7f7;
 font-size: 12px;
 
-/* Background */
+/* bg */
   background-color: #070a08;
   background-image: var(--bg-image);
   background-size: cover;
@@ -65,7 +72,7 @@ font-size: 12px;
   position: relative;
 }
 
-/* Overlay behind content */
+/* bg overlay behind content */
 body::before {
   content: "";
   position: fixed;
@@ -75,14 +82,14 @@ body::before {
   z-index: -1;
 }
 
-/* Page container */
+/* page container */
 .page {
 max-width: var(--max-width);
 margin: 0 auto;
 padding-top: 36px; /* spacing from navbar */
 }
 
-/* Responsive for tablet and smaller screens */
+/* responsive for tablet and smaller screens */
 @media var(--max-width) {
   body {
     background-attachment: scroll; 
@@ -90,13 +97,13 @@ padding-top: 36px; /* spacing from navbar */
 }
 
 
-/* Links */
+/* links */
 a {
 color: inherit;
 text-decoration: none;
 }
 
-/* Images */
+/* img */
 img {
 display: block;
 max-width: 100%;
@@ -104,17 +111,21 @@ height: auto;
 }
 
 /* -------------------- NAVIGATION BAR -------------------- */
+
 nav.main-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;       
+  right: 0;  
   z-index: 1000;
-  width: 100%;  
+  width: 100vw; 
   padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;  
+  gap: 20px;
   
+
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -123,7 +134,7 @@ nav.main-nav {
   border-radius: 0;
 }
 
-/* Navigation Links */
+/* nav links */
 nav.main-nav a {
   display: inline-flex;
   align-items: center;
@@ -136,14 +147,13 @@ nav.main-nav a {
   transition: transform var(--transition), background var(--transition), border var(--transition);
 }
 
-/* Hover effect for links */
 nav.main-nav a:hover {
   transform: translateY(-4px) scale(1.02);
   background: rgba(214,255,63,0.15);
   color: var(--accent); 
 }
 
-/* Mobile Responsiveness */
+/* mobile responsiveness */
 @media (max-width: 768px) {
   nav.main-nav {
     gap: 15px;  
@@ -187,15 +197,15 @@ header.hero-section p {
   font-size: 0.7rem;
 }
 
-/* Mobile responsiveness adjustments */
+/* mobile responsiveness */
 @media (max-width: 768px) {
   header.hero-section {
-    margin-top: 60px; /* Reduced top margin for mobile */
-    padding: 20px; /* Reduced padding */
+    margin-top: 60px; /* reduced top margin */
+    padding: 20px; /* reduced padding */
   }
 
   header.hero-section h1 {
-    font-size: clamp(1.2rem, 5vw, 2rem); /* Smaller font size on mobile */
+    font-size: clamp(1.2rem, 5vw, 2rem); /* smaller font size on mobile */
   }
 }
 /* -------------------- CONTENT GUIDE -------------------- */
@@ -208,7 +218,6 @@ header.hero-section p {
   gap: 20px;
 }
 
-/* content guide / table of contents */
 nav.toc-container{
 background: var(--glass);
 border-radius: 12px;
@@ -237,59 +246,59 @@ color: var(--accent);             /* optional accent color on hover */
 }
 
 
-/* - BASE STYLING (Intro, Conclusion-------------------------------------------------------- */
+/* -- BASE STYLING -------------------------------------------------------- */
 
-  .introduction-box {
-  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
-  margin-top: 18px;
-  margin-bottom: 10px;
-  padding: 28px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.03);
-  color: var(--paper);
-  text-align: center;
+.introduction-box {
+background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+margin-top: 18px;
+margin-bottom: 10px;
+padding: 28px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.03);
+color: var(--paper);
+text-align: center;
 }
 
 .section-heading {
-color: var(--accent);
-font-size: 1.5rem;
-margin: 50px 0 30px 0;
-font-weight: 600;
-border-bottom: 1px solid #ccc;
-padding-bottom: 10px;
-text-align: center;
-        }
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin: 60px 0 30px 0;
+    font-weight: 700;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    text-align: center;
+}
 
+        
 .intro-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 18px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+margin-top: 18px;
 }
 
 .intro-card {
-    background: rgba(255, 255, 255, 0.1); /* semi-transparent */
-  backdrop-filter: blur(10px); /* frosted effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  padding: 20px 28px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.03);
-  color: var(--paper);
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+backdrop-filter: blur(10px); /* frosted effect */
+-webkit-backdrop-filter: blur(10px); /* Safari support */
+padding: 20px 28px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.03);
+color: var(--paper);
+text-align: left;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .intro-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .intro-card h3 {
-  color: var(--focus); 
-  margin-bottom: 10px;
-  font-size: 1.0rem;
-  font-weight: 500;
+color: var(--focus); 
+margin-bottom: 10px;
+font-size: 1.0rem;
+font-weight: 500;
 }
 
 /* Mobile Responsiveness Adjustments */
@@ -299,23 +308,23 @@ text-align: center;
     padding: 20px; 
   }
 
-  /* Section Heading */
+/* Section Heading */
   .section-heading {
     font-size: 1.1rem; 
     margin: 40px 0 20px 0;
   }
 
-  /* Intro Card Grid */
+/* Intro Card Grid */
   .intro-cards {
     grid-template-columns: repeat(2, 1fr); 
   }
 
-  /* Individual Cards */
+/* Individual Cards */
   .intro-card {
     padding: 18px 24px; 
   }
 
-  /* Card Title */
+/* Card Title */
   .intro-card h3 {
     font-size: 0.8rem; 
   }
@@ -355,7 +364,6 @@ text-align: center;
   height: 100%;
 }
 
-/* Hover effect */
 .ethical-risk-card:hover .card-bubble {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0,0,0,0.45);
@@ -366,7 +374,6 @@ text-align: center;
     grid-template-columns: repeat(2, 1fr); 
   }
 
-/* Mimic hover effect on tap (active state) */
   .ethical-risk-card:active .card-bubble {
     transform: translateY(-5px); 
     box-shadow: 0 12px 28px rgba(0,0,0,0.45); 
@@ -412,19 +419,14 @@ text-align: center;
   display: flex;                 
    justify-content: center;       
   align-items: center;           
-
-
 }
-
 
 .card-bubble p {
   flex-grow: 1;        
   font-size: 0.7rem;
   line-height: 1.5;
   color: var(--paper);
-  
 }
-
 
 /* -------------------- Example & Tip Section -------------------- */
 
@@ -437,7 +439,7 @@ text-align: center;
 
 .example-tip-item h4 {
   margin-top: 0;
-  color: var(--color-accent-subtle);
+  color: var(--focus);
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 5px;
@@ -483,7 +485,7 @@ text-align: center;
   background-color: var(--color-tip-bg);
   backdrop-filter: blur(10px); /* Frosted effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-left: 4px solid var(--color-accent);
+  border-left: 4px solid var(--accent);
   color: var(--color-secondary-text);
 }
 
@@ -497,7 +499,7 @@ text-align: center;
 }
 
 .example-box strong { color: var(--color-secondary-text); }
-.tip-box strong { color: var(--color-accent); }
+.tip-box strong { color: var(--accent); }
 
 /* Lists inside boxes */
 .example-box ul,
@@ -516,11 +518,11 @@ text-align: center;
 }
 
 .example-box:hover { 
-  border-left-color: var(--color-primary-text) !important; 
+  border-left-color: var(--papert) !important; 
 }
 
 .tip-box:hover { 
-  border-left-color: var(--color-accent) !important; 
+  border-left-color: var(--accent) !important; 
 }
 
 /* Responsive stacking on mobile - Removed flex-direction: column */
@@ -537,7 +539,7 @@ text-align: center;
   }
 }
 
-/* Further adjustments for very small screens */
+/* small screens */
 @media (max-width: 480px) {
   .example-tip-wrapper .example-box,
   .example-tip-wrapper .tip-box {
@@ -545,20 +547,14 @@ text-align: center;
     font-size: 0.8rem; 
   }
 
-  /* Adjust the heading size for mobile */
+  /* heading size for mobile */
   .example-tip-item h4 {
     font-size: 0.9rem; 
   }
 }
 
+/* - user responsibilities ------------------------------------------ */
 
-
-/* ----------------------------------------------------- */
-/* CSS for User Responsibilities in Using AIGC Grid
-(Tip Box Style Titles) */
-/* ----------------------------------------------------- */
-
-/* 3 Fixed Columns */
 .responsibilities-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -567,7 +563,7 @@ text-align: center;
   margin-bottom: 60px;
 }
 
-/* Individual Card */
+/* per card  */
 .responsibilities-item {
   background: rgba(255, 255, 255, 0.1); /* semi-transparent */
   backdrop-filter: blur(10px); /* frosted effect */
@@ -585,7 +581,6 @@ text-align: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
 
-/* Title */
 .responsibilities-title {
   font-size: 1.0rem;
   font-weight: 500;
@@ -599,7 +594,6 @@ text-align: center;
   margin-bottom: 20px;
 }
 
-/* Body Text */
 .responsibilities-item p {
   padding: 0 20px;
   margin-bottom: 20px;
@@ -607,9 +601,7 @@ text-align: center;
   flex-grow: 1;
 }
 
-/* --------------------------------------------------------- */
-/* NEW CSS for Conclusion Section (Fixed 3-Column Design) */
-/* --------------------------------------------------------- */
+/* - conclusion -------------------------------------------------------- */
 
 .conclusion-card-grid {
     display: grid;
@@ -619,8 +611,6 @@ text-align: center;
     padding: 0 20px;
 }
 
-/* Individual Card Style: Distinct from .intro-card */
-
 .conclusion-point-card {
     background: rgba(255, 255, 255, 0.1); /* semi-transparent */
   backdrop-filter: blur(10px); /* frosted effect */
@@ -628,7 +618,6 @@ text-align: center;
     padding: 20px 28px;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-   
     color: var(--paper);
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -657,10 +646,9 @@ text-align: center;
 .conclusion-point-card p {
     color: var(--color-secondary-text);
     font-size: 0.7rem;
-      line-height: 1.6;
-  margin-top: 5px;
+      line-height: 1.6;
+  margin-top: 5px;
 }
-
 
 /* Mobile Responsiveness for Conclusion Cards */
 @media (max-width: 640px) {
@@ -669,8 +657,6 @@ text-align: center;
     }
 }
 
-
-/* 3 Fixed Columns */
 .responsibilities-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -679,7 +665,6 @@ text-align: center;
   margin-bottom: 60px;
 }
 
-/* Individual Card */
 .responsibilities-item {
     background: rgba(255, 255, 255, 0.1); /* semi-transparent */
   backdrop-filter: blur(10px); /* frosted effect */
@@ -697,7 +682,6 @@ text-align: center;
   box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
 
-/* Title */
 .responsibilities-title {
   font-size: 1.0rem;
   font-weight: 500;
@@ -711,7 +695,6 @@ text-align: center;
   margin-bottom: 20px;
 }
 
-/* Body Text */
 .responsibilities-item p {
   padding: 0 20px;
   margin-bottom: 20px;
@@ -721,11 +704,7 @@ text-align: center;
 /* --------------------------------------------------------- */ 
 
 
-/* --------------------------------------------------------- */ 
 
-
-
-/* Ensuring the main section heading remains styled correctly */
 .section-heading {
     color: var(--accent);
     font-size: 1.5rem;
@@ -808,218 +787,224 @@ Miguel Enriquez<br>
 <h1 class="section-heading">Introduction</h1>
 <section id="section-introduction" class="intro-cards">
 
-  <div class="intro-card">
-  <h3>What is AI-Generated Content?</h3>
-    <p>AI-Generated Content is basically any kind of media that can be either words, pictures, audio, or videos, which are developed by the aid of AI systems.</p>
-  </div>
-
-  <div class="intro-card">
-    <h3>How AI Produces Content</h3>
-    <p>These systems employ algorithms, particularly machine learning and deep learning models, to analyze vast datasets and produce content that mimics human creativity and expression.</p>
-  </div>
-
-  <div class="intro-card">
-    <h3>Examples of AI Tools</h3>
-    <p>AI language models like OpenAI's GPT series, visual platforms such as DALL·E for image generation, and tools like Runway for video production are some of the most advancing AI-content-generation-tool examples (Elgammal et al., 2023; Kelleher, 2023).</p>
-  </div>
-
-  <div class="intro-card">
-    <h3>Benefits of AI Content</h3>
-    <p>In terms of production, AI content has speed and cost advantages, enabling businesses and producers to grow operations at low cost (Binns, 2022).</p>
-  </div>
-
-  <div class="intro-card">
-    <h3>Applications in Industry</h3>
-    <p>AI is widely used in marketing and content production, fulfilling demands for targeted visual and video content without lengthy human involvement, benefiting fields like e-commerce, advertising, and media.</p>
-  </div>
-
-  <div class="intro-card">
-    <h3>Risks & Ethical Concerns</h3>
-    <p>AI can fabricate information and generate content that appears real but isn’t (Liu et al., 2023). Without human oversight, AI content can foster bias, strengthen stereotypes, and raise issues of ownership, authorial rights, and ethical usage (Binns, 2022).</p>
-  </div>
-
-</section>
-</p>
+<div class="intro-card">
+<h3>What is AI-Generated Content?</h3>
+<p>AI-Generated Content is basically any kind of media that can be either words, pictures, audio, or videos, which are developed by the aid of AI systems.</p>
 </div>
 
-<!-- ETHICAL RISKS ---------------------------------------------------------->
+<div class="intro-card">
+<h3>How AI Produces Content</h3>
+<p>These systems employ algorithms, particularly machine learning and deep learning models, to analyze vast datasets and produce content that mimics human creativity and expression.</p>
+</div>
+
+<div class="intro-card">
+<h3>Examples of AI Tools</h3>
+<p>AI language models like OpenAI's GPT series, visual platforms such as DALL·E for image generation, and tools like Runway for video production are some of the most advancing AI-content-generation-tool examples (Elgammal et al., 2023; Kelleher, 2023).</p>
+</div>
+
+<div class="intro-card">
+<h3>Benefits of AI Content</h3>
+<p>In terms of production, AI content has speed and cost advantages, enabling businesses and producers to grow operations at low cost (Binns, 2022).</p>
+</div>
+
+<div class="intro-card">
+<h3>Applications in Industry</h3>
+<p>AI is widely used in marketing and content production, fulfilling demands for targeted visual and video content without lengthy human involvement, benefiting fields like e-commerce, advertising, and media.</p>
+</div>
+
+<div class="intro-card">
+<h3>Risks & Ethical Concerns</h3>
+<p>AI can fabricate information and generate content that appears real but isn’t (Liu et al., 2023). Without human oversight, AI content can foster bias, strengthen stereotypes, and raise issues of ownership, authorial rights, and ethical usage (Binns, 2022).</p>
+</div>
+
+</section>
+
+<!-- concerns ---------------------------------------------------------->
 
 <section id="section-main-content">
-  <h2 class="section-heading">Concerns & Disadvantages</h2>
+<h2 class="section-heading">Concerns & Disadvantages</h2>
 
-  <div class="ethical-risk-grid">
+<!-- ethical risks ----------------------------------------------------->
+
+<div class="ethical-risk-grid">
     
-    <!-- Card 1 -->
-    <div class="ethical-risk-card">
-      <div class="card-image">
-        <img src="https://images.pexels.com/photos/3989901/pexels-photo-3989901.jpeg?_gl=1*dufw67*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ1MzEkajQyJGwwJGgw" alt="Misinformation">
-      </div>
-      <div class="card-bubble">
-        <h3>Misinformation & Harmful Content</h3>
-        <p>AI tools can generate false or misleading information that looks believable. This risk becomes serious when misinformation influences public opinion, health decisions, or safety. <strong>61%</strong> of US adults report seeing visuals manipulated by AI quite often.</p>
-      </div>
-    </div>
+<!-- card 1 ------------------------------------------------------------>
+<div class="ethical-risk-card">
+<div class="card-image">
+<img src="https://images.pexels.com/photos/3989901/pexels-photo-3989901.jpeg?_gl=1*dufw67*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ1MzEkajQyJGwwJGgw" alt="Misinformation">
+</div>
 
-    <!-- Card 2 -->
-    <div class="ethical-risk-card">
-      <div class="card-image">
-        <img src="https://images.pexels.com/photos/18465017/pexels-photo-18465017.jpeg?_gl=1*1x3lzf7*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ1OTQkajQ2JGwwJGgw" alt="Deepfakes">
-      </div>
-      <div class="card-bubble">
-        <h3>Social Manipulation</h3>
-        <p>AI can create hyper-realistic fabricated media (videos, voices, images) to impersonate people or create fake statements, damaging reputations and undermining trust. <strong>82%</strong> of respondents believed an AI-generated visual was real at least once.</p>
-      </div>
-    </div>
+<div class="card-bubble">
+<h3>Misinformation & Harmful Content</h3>
+<p>AI tools can generate false or misleading information that looks believable. This risk becomes serious when misinformation influences public opinion, health decisions, or safety. <strong>61%</strong> of US adults report seeing visuals manipulated by AI quite often.</p>
+</div>
+</div>
 
-    <!-- Card 3 -->
-    <div class="ethical-risk-card">
-      <div class="card-image">
-        <img src="https://images.pexels.com/photos/4985334/pexels-photo-4985334.jpeg?_gl=1*akjkrf*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ2OTgkajkkbDAkaDA." alt="Academic Misuse">
-      </div>
-      <div class="card-bubble">
-        <h3>Academic Misuse</h3>
-        <p>Students may use AI to complete assignments without doing the actual work, leading to plagiarism and shallow understanding. More than half of US students (<strong>55%</strong>) admit to using AI against school policies.</p>
-      </div>
-    </div>
+<!-- card 2 ------------------------------------------------------------>
+<div class="ethical-risk-card">
+<div class="card-image">
+<img src="https://images.pexels.com/photos/18465017/pexels-photo-18465017.jpeg?_gl=1*1x3lzf7*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ1OTQkajQ2JGwwJGgw" alt="Deepfakes">
+</div>
 
-    <!-- Card 4 -->
-    <div class="ethical-risk-card">
-      <div class="card-image">
-        <img src="https://images.pexels.com/photos/5380683/pexels-photo-5380683.jpeg?_gl=1*pkgk2p*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ3ODEkajE5JGwwJGgw" alt="Data Privacy">
-      </div>
-      <div class="card-bubble">
-        <h3>Data Privacy Violations</h3>
-        <p>AI systems train on large datasets that contain personal information. If this data is used without consent or handled carelessly, it can expose sensitive details and increase the risks of identity theft or unauthorized profiling.</p>
-      </div>
-    </div>
+<div class="card-bubble">
+<h3>Social Manipulation</h3>
+<p>AI can create hyper-realistic fabricated media (videos, voices, images) to impersonate people or create fake statements, damaging reputations and undermining trust. <strong>82%</strong> of respondents believed an AI-generated visual was real at least once.</p>
+</div>
+</div>
 
-  </div>
+<!-- card 3 ------------------------------------------------------------>
+<div class="ethical-risk-card">
+<div class="card-image">
+<img src="https://images.pexels.com/photos/4985334/pexels-photo-4985334.jpeg?_gl=1*akjkrf*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ2OTgkajkkbDAkaDA." alt="Academic Misuse">
+</div>
+
+<div class="card-bubble">
+<h3>Academic Misuse</h3>
+<p>Students may use AI to complete assignments without doing the actual work, leading to plagiarism and shallow understanding. More than half of US students (<strong>55%</strong>) admit to using AI against school policies.</p>
+</div>
+</div>
+
+<!-- Card 4 ------------------------------------------------------------>
+<div class="ethical-risk-card">
+<div class="card-image">
+<img src="https://images.pexels.com/photos/5380683/pexels-photo-5380683.jpeg?_gl=1*pkgk2p*_ga*MTI2NDc2MzY2NS4xNzY0ODc5MDI3*_ga_8JE65Q40S6*czE3NjQ5NTQzODckbzIkZzEkdDE3NjQ5NTQ3ODEkajE5JGwwJGgw" alt="Data Privacy">
+</div>
+
+<div class="card-bubble">
+<h3>Data Privacy Violations</h3>
+<p>AI systems train on large datasets that contain personal information. If this data is used without consent or handled carelessly, it can expose sensitive details and increase the risks of identity theft or unauthorized profiling.</p>
+</div>
+</div>
+
+</div>
 </section>
 
-
-<!--------- Real-World Examples and Best Practice Tips --------->
-
-<section id="section-main-content">
-  <h2 class="section-heading">Real-World Examples and Best Practice Tipss</h2>
-
-<!-- Example 1 -->
-<div class="example-tip-item" tabindex="0">
-  <h4>a. Ethical Risks and Misinformation</h4>
-  <div class="example-tip-wrapper">
-    <div class="example-box">
-      <strong>Example:</strong> A person asks an AI tool to summarize a complicated health topic. It provides an AI-written, confident-sounding explanation, although a few details are wrong or too simplified. The person forwards that information on social media without checking its authenticity. It spreads rapidly until people recite the same errors because the original AI output sounded trustworthy.
-    </div>
-    <div class="tip-box">
-      <strong>💡 Tip:</strong>
-      <ul>
-        <li>Consider AI responses as drafts, not finished answers.</li>
-        <li>Compare key assertions to at least a couple of reliable human-written sources.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Example 2 -->
-<div class="example-tip-item" tabindex="0">
-  <h4>b. Social Manipulation</h4>
-  <div class="example-tip-wrapper">
-    <div class="example-box">
-      <strong>Example:</strong> In recent elections, several deepfake videos went viral, showing public figures making controversial statements. Even though the videos were AI-edited, their realism misled many viewers and created temporary confusion.
-    </div>
-    <div class="tip-box">
-      <strong>💡 Tip:</strong>
-      <ul>
-        <li>Verify videos and images before sharing them.</li>
-        <li>Enhance digital literacy: question content that looks "too perfect."</li>
-        <li>Label AI-generated content when used to build transparency.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Example 3 -->
-<div class="example-tip-item" tabindex="0">
-  <h4>c. Academic Misuse</h4>
-  <div class="example-tip-wrapper">
-    <div class="example-box">
-      <strong>Example:</strong> A student uses AI to write an essay and submits it as their own. The content may flow well, but it lacks depth and personal critical insight, leading to a breach of academic integrity.
-    </div>
-    <div class="tip-box">
-      <strong>💡 Tip:</strong>
-      <ul>
-        <li>Use AI for brainstorming, not substituting original thinking.</li>
-        <li>Check school policies to avoid misconduct.</li>
-        <li>Avoid over-reliance on AI for academic work.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Example 4 -->
-<div class="example-tip-item" tabindex="0">
-  <h4>d. AI is a Tool, Not a Replacement</h4>
-  <div class="example-tip-wrapper">
-    <div class="example-box">
-      <strong>Example:</strong> A small business uses AI to write blog posts. Initially, this saves time, but content feels generic over time and lacks authenticity, which reduces reader engagement.
-    </div>
-    <div class="tip-box">
-      <strong>💡 Tip:</strong>
-      <ul>
-        <li>Balance human input with AI-generated drafts.</li>
-        <li>Use AI to enhance, not replace.</li>
-        <li>Add personal insights to connect with the audience.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- Example 5 -->
-<div class="example-tip-item" tabindex="0">
-  <h4>e. Adherence</h4>
-  <div class="example-tip-wrapper">
-    <div class="example-box">
-      <strong>Example:</strong> A company automates its chatbot using AI. Customers become upset if unaware they're interacting with AI, potentially violating consumer rights in some countries.
-    </div>
-    <div class="tip-box">
-      <strong>💡 Tip:</strong>
-      <ul>
-        <li>Stay informed about AI regulations.</li>
-        <li>Ensure AI output follows best practices and legal frameworks.</li>
-        <li>Disclose AI-generated interactions transparently, especially in sensitive domains.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- User Responsibilities  ---------------------------------------------------------->
+<!-- Real-World Examples and Best Practice Tips ----------------------->
 
 <section id="section-main-content">
-  <h2 class="section-heading">User Responsibilities in Using AI-Generated Content</h2>
+<h2 class="section-heading">Real-World Examples and Best Practice Tips</h2>
+
+<!-- example 1 -------------------------------------------------------->
+<div class="example-tip-item" tabindex="0">
+<h4>a. Ethical Risks and Misinformation</h4>
+<div class="example-tip-wrapper">
+<div class="example-box">
+<strong>Example:</strong> A person asks an AI tool to summarize a complicated health topic. It provides an AI-written, confident-sounding explanation, although a few details are wrong or too simplified. The person forwards that information on social media without checking its authenticity. It spreads rapidly until people recite the same errors because the original AI output sounded trustworthy.
+</div>
+
+<div class="tip-box">
+<strong>💡 Tip:</strong>
+<ul>
+<li>Consider AI responses as drafts, not finished answers.</li>
+<li>Compare key assertions to at least a couple of reliable human-written sources.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- example 2 -------------------------------------------------------->
+<div class="example-tip-item" tabindex="0">
+<h4>b. Social Manipulation</h4>
+<div class="example-tip-wrapper">
+<div class="example-box">
+<strong>Example:</strong> In recent elections, several deepfake videos went viral, showing public figures making controversial statements. Even though the videos were AI-edited, their realism misled many viewers and created temporary confusion.
+</div>
+
+<div class="tip-box">
+<strong>💡 Tip:</strong>
+<ul>
+<li>Verify videos and images before sharing them.</li>
+<li>Enhance digital literacy: question content that looks "too perfect."</li>
+<li>Label AI-generated content when used to build transparency.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- example 3 -------------------------------------------------------->
+<div class="example-tip-item" tabindex="0">
+<h4>c. Academic Misuse</h4>
+<div class="example-tip-wrapper">
+<div class="example-box">
+<strong>Example:</strong> A student uses AI to write an essay and submits it as their own. The content may flow well, but it lacks depth and personal critical insight, leading to a breach of academic integrity.
+</div>
+
+<div class="tip-box">
+<strong>💡 Tip:</strong>
+<ul>
+<li>Use AI for brainstorming, not substituting original thinking.</li>
+<li>Check school policies to avoid misconduct.</li>
+<li>Avoid over-reliance on AI for academic work.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- example 4 -------------------------------------------------------->
+<div class="example-tip-item" tabindex="0">
+<h4>d. AI is a Tool, Not a Replacement</h4>
+<div class="example-tip-wrapper">
+<div class="example-box">
+<strong>Example:</strong> A small business uses AI to write blog posts. Initially, this saves time, but content feels generic over time and lacks authenticity, which reduces reader engagement.
+</div>
+
+<div class="tip-box">
+<strong>💡 Tip:</strong>
+<ul>
+<li>Balance human input with AI-generated drafts.</li>
+<li>Use AI to enhance, not replace.</li>
+<li>Add personal insights to connect with the audience.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- example 5 -------------------------------------------------------->
+<div class="example-tip-item" tabindex="0">
+<h4>e. Adherence</h4>
+<div class="example-tip-wrapper">
+<div class="example-box">
+<strong>Example:</strong> A company automates its chatbot using AI. Customers become upset if unaware they're interacting with AI, potentially violating consumer rights in some countries.
+</div>
+
+<div class="tip-box">
+<strong>💡 Tip:</strong>
+<ul>
+<li>Stay informed about AI regulations.</li>
+<li>Ensure AI output follows best practices and legal frameworks.</li>
+<li>Disclose AI-generated interactions transparently, especially in sensitive domains.</li>
+</ul>
+</div>
+</div>
+</div>
 
 
-<!-- video ------------------------>
+<!-- user responsibilities ------------------------------------------------>
+
+<section id="section-main-content">
+<h2 class="section-heading">User Responsibilities in Using AI-Generated Content</h2>
+
+<!-- start video ---------------------------------------------------------->
 
 <div class="page" style="max-width: 500px; margin: 0 auto;">
 
-  <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden;">
-    <iframe 
-      src="https://www.youtube.com/embed/-n1eQXLZnXc" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen
-      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-    </iframe>
-  </div>
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden;">
+
+<iframe 
+src="https://www.youtube.com/embed/-n1eQXLZnXc" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen
+style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</iframe>
+</div>
 
 <p style="margin-top: 10px; text-align: center;">A video by Accenture discussing the risks and responsible use of generative AI.</p>
 
 </div>
 
 
-<!-- video ------------------------>
-
+<!-- end video ---------------------------------------------------------->
 
 <div class="responsibilities-grid-container">
 
@@ -1054,8 +1039,8 @@ Miguel Enriquez<br>
 </div>
 </div>
 
+<!-- conclusion ---------------------------------------------------------->
 
-<!-- CONCLUSION ---------------------------------------------------------->
 <section id="section-conclusion">
 <h2 class="section-heading">Conclusion</h2>
 
@@ -1079,88 +1064,90 @@ Miguel Enriquez<br>
 </div>
 </section>
 
-<!-- REFERENCES ---------------------------------------------------------->
+<!-- references ---------------------------------------------------------->
+
 <nav class="toc-container references-container">
-  <h2>References</h2>
-  <ul>
-    <li>Copyleaks. (2024, October 2). STUDY: Majority of students admit to using AI against school policy. GlobeNewswire News Room. https://www.globenewswire.com/news-release/2024/10/02/2957101/0/en/STUDY-Majority-of-Students-Admit-to-Using-AI-Against-School-Policy.html
+<h2>References</h2>
+
+<ul>
+<li>Copyleaks. (2024, October 2). STUDY: Majority of students admit to using AI against school policy. GlobeNewswire News Room. https://www.globenewswire.com/news-release/2024/10/02/2957101/0/en/STUDY-Majority-of-Students-Admit-to-Using-AI-Against-School-Policy.html
 </li>
-    <li>McCann, L. (2025, November 10). Copyleaks research: 82% admit they’ve mistaken AI images for real – and public trust is crumbling. Copyleaks. https://copyleaks.com/blog/copyleaks-research-ai-images-and-crumbling-public-trust
+
+<li>McCann, L. (2025, November 10). Copyleaks research: 82% admit they’ve mistaken AI images for real – and public trust is crumbling. Copyleaks. https://copyleaks.com/blog/copyleaks-research-ai-images-and-crumbling-public-trust
 </li>
-    <li>Binns, R. (2022). The ethical challenges of AI-generated content: Implications for intellectual property and accountability. Journal of Digital Media Ethics, 18(3), 245-261. [https://doi.org/10.1080/20408000.2022.2045411](https://doi.org/10.1080/20408000.2022.2045411)
+
+<li>Binns, R. (2022). The ethical challenges of AI-generated content: Implications for intellectual property and accountability. Journal of Digital Media Ethics, 18(3), 245-261. [https://doi.org/10.1080/20408000.2022.2045411](https://doi.org/10.1080/20408000.2022.2045411)
 </li>
 
 <li>Elgammal, A., Liu, B., Elhoseiny, M., & Mazzone, M. (2023). Visual content creation using AI: A review of generative models and their applications. Journal of Computer Vision and Image Understanding, 213, 103-115. [https://doi.org/10.1016/j.cviu.2022.103115](https://doi.org/10.1016/j.cviu.2022.103115)
 </li>
-  <li>Kelleher, J. D. (2023). Artificial intelligence: The future of content generation. International Journal of Artificial Intelligence in Education, 33(4), 538-553. [https://doi.org/10.1007/s40593-023-00303-3](https://doi.org/10.1007/s40593-023-00303-3)
+
+<li>Kelleher, J. D. (2023). Artificial intelligence: The future of content generation. International Journal of Artificial Intelligence in Education, 33(4), 538-553. [https://doi.org/10.1007/s40593-023-00303-3](https://doi.org/10.1007/s40593-023-00303-3)
 </li>
-    <li>Liu, Z., Zhang, X., & Wang, J. (2023). Deepfakes and the ethics of AI-generated content: A critical review. AI & Society, 38(2), 253-265. [https://doi.org/10.1007/s00146-022-01510-0](https://doi.org/10.1007/s00146-022-01510-0)
+
+<li>Liu, Z., Zhang, X., & Wang, J. (2023). Deepfakes and the ethics of AI-generated content: A critical review. AI & Society, 38(2), 253-265. [https://doi.org/10.1007/s00146-022-01510-0](https://doi.org/10.1007/s00146-022-01510-0)
 </li>
 
 <li>Accenture. (2025). Risks and responsible use of generative AI [Video]. YouTube. https://www.youtube.com/watch?v=-n1eQXLZnXc</li>
-  </ul>
+</ul>
 </nav>
 
-<!-- FOOTER -------------------------------------------------------------->
+<!-- footer -------------------------------------------------------------->
 <footer style="
-  width: 100vw; 
-  margin-top: 10rem;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;           
-  margin-right: -50vw;
+width: 100vw; 
+margin-top: 10rem;
+position: relative;
+left: 50%;
+right: 50%;
+margin-left: -50vw;           
+margin-right: -50vw;
 
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 -4px 14px rgba(0,0,0,0.2);
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border-top: 1px solid rgba(255,255,255,0.12);
+box-shadow: 0 -4px 14px rgba(0,0,0,0.2);
 
-  padding: 30px 0;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-color);
+padding: 30px 0;
+text-align: center;
+font-size: 0.85rem;
+color: var(--text-color);
 ">
 
-  <!-- Inner centered container -->
-  <div style="
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 20px;
-  ">
+<!-- inner centered -->
+<div style="
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 20px;
+">
 
-    <!-- CC Icons -->
-    <div style="
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: .35em;
-      margin-bottom: 10px;
-    ">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="width: 1.2em; height: 1.2em;">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="width: 1.2em; height: 1.2em;">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="width: 1.2em; height: 1.2em;">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="width: 1.2em; height: 1.2em;">
-    </div>
+<!-- cc icons -->
+<div style="
+display: flex;
+justify-content: center;
+align-items: center;
+gap: .35em;
+margin-bottom: 10px;
+">
 
-    <!-- Text -->
-    <div style="line-height: 1.6;">
-      <a href="https://chewkingg.github.io/AIGC-mms171group3/" style="color: var(--accent); font-weight: 600;">
-        Responsible use of AI-generated Content
-      </a>
-      © 2025 by 
-      <a href="https://example.com" style="color: var(--accent); font-weight: 600;">
-        MMS 171 Group 3
-      </a>
-      is licensed under
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--accent); font-weight: 600;">
-        CC BY-NC-SA 4.0
-      </a>.
-    </div>
+<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="width: 1.2em; height: 1.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="width: 1.2em; height: 1.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC" style="width: 1.2em; height: 1.2em;">
+<img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="width: 1.2em; height: 1.2em;">
+</div>
 
-  </div>
+<!-- text -->
+<div style="line-height: 1.6;">
+<a href="https://chewkingg.github.io/AIGC-mms171group3/" style="color: var(--accent); font-weight: 600;">Responsible use of AI-generated Content</a>
+© 2025 by <a href="https://example.com" style="color: var(--accent); font-weight: 600;">MMS 171 Group 3</a>
+is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: var(--accent); font-weight: 600;">CC BY-NC-SA 4.0</a>
+
+</div>
+</div>
 
 </footer>
 </body>
 </html>
+
+
+
